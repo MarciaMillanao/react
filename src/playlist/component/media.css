@@ -1,0 +1,11 @@
+.Media {
+  cursor: pointer;
+  margin-right: 15px;
+  display: inline-block;
+  width: 260px;
+  vertical-align: top;
+  color: green;
+  border: 1px solid red;
+  text-align: center;
+  background-color: yellow;
+}
