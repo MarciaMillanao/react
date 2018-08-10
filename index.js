@@ -13,4 +13,10 @@ const container = document.getElementById('app');
 // Y donde debe ser una parte del DOM que ya exista (index.html)
 //const holaMarcia = <h1>Hola Marcia Karina !!</h1>;
 
-ReactDOM.render(<Media/>, container);
+ReactDOM.render(
+<Media 
+  title="¿Qué es responsive?" 
+  author="Marcia Millanao" i
+  mage="./image/perro.jpeg"/>, 
+  container
+);

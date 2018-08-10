@@ -23,9 +23,12 @@ class Media extends Component {
       // Como la palabra class es reservada en JS, para asignarle una clase a nuestros elementos utilizamos className
       <div className="Media"> 
         <div>
-          <h3> Practicando React</h3>
-          <img scr="" alt="" width={260} height={160}/>
-          <p>Marcia Millanao</p>
+          <h3>{this.props.title}</h3>
+          <img 
+            scr={this.props.image}
+            alt="" 
+            width={260} height={160}/>
+          <p>{this.props.author}</p>
         </div>
       </div>
     )
