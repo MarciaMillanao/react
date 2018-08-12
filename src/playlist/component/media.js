@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import MediaCss from './media.css';
+//podemos validar los tipados de lo que ingresamos, eso lo hacemos con prop-types que lo instalamos desde nuestra terminal y luego lo importamos
+import PropTypes from 'prop-types';
+import './media.css';
+
 // Acá crearemos nuestro componente que puede ser funcional, puro o de estado(que este es el mas clasico)
 // Creamos nuestra clase que se llamará Media que va a extender de Component (que ya existe en react)
 class Media extends Component {
@@ -33,6 +36,14 @@ class Media extends Component {
       </div>
     )
   }
+}
+
+// Luego acá asignamos nuestros proptipes a nuestra clase Media como un objeto y validaremos que tipo de datos debe recibir la sintaxis es propTypes, porque será una propiedad de nuestra clase
+Media.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string.isRequired, // Así valido que exista de lo contrario funcionara el código pero me enviará un mensaje que falta
+  author: PropTypes.string,
+  type: PropTypes.oneOf(['video', 'audio']), // Acá con oneOf, le estoy dicioendo que valide que sea video o audio
 }
 
 // Ya tenemos creado nuestra clase (componente), pero para poder utilizarlo debemos exportarlo

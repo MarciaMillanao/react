@@ -17,6 +17,8 @@ ReactDOM.render(
 <Media 
   title="¿Qué es responsive?" 
   author="Marcia Millanao" 
-  image="./image/perro.jpeg"/>, 
+  image="./image/perro.jpeg"
+  type="video"
+  />, 
   container
 );
