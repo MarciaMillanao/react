@@ -16,7 +16,7 @@ const container = document.getElementById('app');
 ReactDOM.render(
 <Media 
   title="¿Qué es responsive?" 
-  author="Marcia Millanao" i
-  mage="./image/perro.jpeg"/>, 
+  author="Marcia Millanao" 
+  image="./image/perro.jpeg"/>, 
   container
 );

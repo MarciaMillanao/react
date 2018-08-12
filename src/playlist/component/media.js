@@ -5,7 +5,7 @@ import MediaCss from './media.css';
 class Media extends Component {
   // este componente se instanciará con un método llamado render, que tendrá dentro todo el código html
   render() {
-     // En react podemos utilizar estilos inline, los tenemos que guardar en una variable y luego utilizarla en el elemento que querramos 
+    // En react podemos utilizar estilos inline, los tenemos que guardar en una variable y luego utilizarla en el elemento que querramos 
     /*const styles = {
       //se declara como un objeto y dentro le daremos los estilos que querramos por lo que no se puede utilizar las propiedades en dos palabras front-size, sino que debemos declararlas de la siguiente manera fontSize y las medidas de px debemos solo ponerles en numero
       container: {
@@ -25,7 +25,7 @@ class Media extends Component {
         <div>
           <h3>{this.props.title}</h3>
           <img 
-            scr={this.props.image}
+            src={this.props.image}
             alt="" 
             width={260} height={160}/>
           <p>{this.props.author}</p>
