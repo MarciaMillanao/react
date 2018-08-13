@@ -7,16 +7,29 @@ import './media.css';
 // Creamos nuestra clase que se llamará Media que va a extender de Component (que ya existe en react)
 class Media extends Component {
   // Para que nuestro codigo funcione, debemos enlazar nuestro evento a nuestra class Media, eso se hace a traves de un método llamado constructor, que se autoejecuta una vez que sea instanciada (se autollama, cuando Media se renderiza), recibe como parámetro nuestras propiedades, y tambien utilizamos super, para utilizar nuestras propiedades
+  // En react las props son inmutables, si queremos hacer su contenido dinamico, tenemos que cambiar el estado
   constructor(props) {
     super(props)
+    this.state = {
+      author: props.author
+    }
     this.handleClick = this.handleClick.bind(this);// con bind(this, me estoy refiriendo a mi class Media, así los temgo enlazado y puedo utilizar mi evento en mis elementos)
   }
-  // Existe la opción de enlazar nuestro evento a la class en EC7 que es menos código, al hacerlo con arrow function como de esta forma heredamos el contecto de su poadre, this ya esta disponible para utilizarlo
+  // Existe la opción de enlazar nuestro evento a la class en EC7 que es menos código, al hacerlo con arrow function como de esta forma heredamos el contecto de su poadre, this ya esta disponible para utilizarlo y no es necesario tener un constructor y para utilizar cambio de estados solo es necesario esta linea de código
+  //state = {
+    //author: 'Karina Yáñez',
+  //}
   // handleClick = (event ) => {
     // console.log(this.props.title);
+    //this.setState({
+      //author: 'Karina Yañez',
+    //})
   //}
   handleClick(event) { // Creo mi función, como parametro le paso mi evento y dentro lo que quiero hacer
-    console.log(this.props.title);
+    //console.log(this.props.title);
+    this.setState({
+      author: 'Karina Yañez',
+    })
 
   }
   // este componente se instanciará con un método llamado render, que tendrá dentro todo el código html
@@ -39,6 +52,7 @@ class Media extends Component {
       // Como la palabra class es reservada en JS, para asignarle una clase a nuestros elementos utilizamos className
       // También podemos hacer nuestro codigo interactivo, con eventos que vamos a agregar a nuestros elementos
       // this es porque llamaremos a algo que esta dentro de nuestra class Media, handleClick simplemente ese es el nombre de nuestra función (manejador de nuestro click de elementos)
+      // Si voy a realizar cambio de estado, ya no será this.props.author, sino que acá utilizaremos this.state.author
       <div className="Media" onClick={this.handleClick}>
         <div>
           <h3>{this.props.title}</h3>
@@ -46,7 +60,7 @@ class Media extends Component {
             src={this.props.image}
             alt="" 
             width={260} height={160}/>
-          <p>{this.props.author}</p>
+          <p>{this.state.author}</p>
         </div>
       </div>
     )
