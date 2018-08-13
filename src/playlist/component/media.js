@@ -6,6 +6,19 @@ import './media.css';
 // Acá crearemos nuestro componente que puede ser funcional, puro o de estado(que este es el mas clasico)
 // Creamos nuestra clase que se llamará Media que va a extender de Component (que ya existe en react)
 class Media extends Component {
+  // Para que nuestro codigo funcione, debemos enlazar nuestro evento a nuestra class Media, eso se hace a traves de un método llamado constructor, que se autoejecuta una vez que sea instanciada (se autollama, cuando Media se renderiza), recibe como parámetro nuestras propiedades, y tambien utilizamos super, para utilizar nuestras propiedades
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this);// con bind(this, me estoy refiriendo a mi class Media, así los temgo enlazado y puedo utilizar mi evento en mis elementos)
+  }
+  // Existe la opción de enlazar nuestro evento a la class en EC7 que es menos código, al hacerlo con arrow function como de esta forma heredamos el contecto de su poadre, this ya esta disponible para utilizarlo
+  // handleClick = (event ) => {
+    // console.log(this.props.title);
+  //}
+  handleClick(event) { // Creo mi función, como parametro le paso mi evento y dentro lo que quiero hacer
+    console.log(this.props.title);
+
+  }
   // este componente se instanciará con un método llamado render, que tendrá dentro todo el código html
   render() {
     // En react podemos utilizar estilos inline, los tenemos que guardar en una variable y luego utilizarla en el elemento que querramos 
@@ -24,7 +37,9 @@ class Media extends Component {
     return (
       //podemos ponerle clases o lo que queramos a nuestro código html, al igual que fuera html comun, pero se llama JSX, que es la forma que se nombra el escribir html dentro de JS
       // Como la palabra class es reservada en JS, para asignarle una clase a nuestros elementos utilizamos className
-      <div className="Media"> 
+      // También podemos hacer nuestro codigo interactivo, con eventos que vamos a agregar a nuestros elementos
+      // this es porque llamaremos a algo que esta dentro de nuestra class Media, handleClick simplemente ese es el nombre de nuestra función (manejador de nuestro click de elementos)
+      <div className="Media" onClick={this.handleClick}>
         <div>
           <h3>{this.props.title}</h3>
           <img 
