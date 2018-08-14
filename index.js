@@ -4,7 +4,8 @@ import React from 'react';
 // ReactDom me servirá para renderizar mis componentes creados
 import ReactDOM from 'react-dom';
 // Acá importaremos el componente que hemos creado siguiendo la ruta donde la tenemos guardada
-import Media from './src/playlist/component/media';
+import Playlist from './src/playlist/component/playlist';
+import data from './src/api.json';
 
 // Acá es donde guardaremos en una variable nuestro id de html (eta es la parte de DOM que ya existe)
 const container = document.getElementById('app');
@@ -14,11 +15,13 @@ const container = document.getElementById('app');
 //const holaMarcia = <h1>Hola Marcia Karina !!</h1>;
 
 ReactDOM.render(
-<Media 
-  title="¿Qué es responsive?" 
-  author="Marcia Millanao" 
-  image="./image/perro.jpeg"
-  type="video"
-  />, 
-  container
+//<Media 
+  //title="¿Qué es responsive?" 
+  //author="Marcia Millanao" 
+  //image="./image/perro.jpeg"
+  //type="video"
+  ///>, 
+  //container
+  <Playlist data={data} />,
+  container  
 );
