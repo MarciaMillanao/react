@@ -53,13 +53,17 @@ class Media extends Component {
       // También podemos hacer nuestro codigo interactivo, con eventos que vamos a agregar a nuestros elementos
       // this es porque llamaremos a algo que esta dentro de nuestra class Media, handleClick simplemente ese es el nombre de nuestra función (manejador de nuestro click de elementos)
       // Si voy a realizar cambio de estado, ya no será this.props.author, sino que acá utilizaremos this.state.author
+      // en src llamo a cover que es el nombre de la clave en el json
       <div className="Media" onClick={this.handleClick}>
         <div>
           <h3>{this.props.title}</h3>
           <img 
-            src={this.props.image}
+            src={this.props.cover}
             alt="" 
-            width={260} height={160}/>
+            width={260} 
+            height={160}
+            className="Media-image"
+            />
           <p>{this.state.author}</p>
         </div>
       </div>
@@ -69,7 +73,7 @@ class Media extends Component {
 
 // Luego acá asignamos nuestros proptipes a nuestra clase Media como un objeto y validaremos que tipo de datos debe recibir la sintaxis es propTypes, porque será una propiedad de nuestra clase
 Media.propTypes = {
-  image: PropTypes.string,
+  cover: PropTypes.string,
   title: PropTypes.string.isRequired, // Así valido que exista de lo contrario funcionara el código pero me enviará un mensaje que falta
   author: PropTypes.string,
   type: PropTypes.oneOf(['video', 'audio']), // Acá con oneOf, le estoy dicioendo que valide que sea video o audio
