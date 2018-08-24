@@ -1,8 +1,9 @@
 import React from 'react';
 
-
+// Este componente lo puedo reutilizar las veces que quiera
 function Icon(props) {// le pasaremos props como parametro, porque mi componente recibirá propiedades de configuración
   //declararemos una const donde le pasaremos las propiedades que queramos, será igual a props
+  // props.children es el hijo que recibirá
   const {
     color,
     size, // en vez de algo y ancho, solo utilizaremos size ya que ambos valores serán iguales

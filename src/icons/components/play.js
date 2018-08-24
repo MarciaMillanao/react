@@ -12,7 +12,7 @@ function Play(props) {
     </Icon>
   )
 }
-
+//podría dearrollar todos las funciones acá, o en archivos diferentes
 
 /*function Play() { si lo creamos de esta forma, no podremos reutizar código, por lo que lo desarrollaremos de otra foema sin estilos ya prefedinidos
   return (

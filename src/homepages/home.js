@@ -4,8 +4,9 @@ import React from 'react';
 // ReactDom me servirá para renderizar mis componentes creados
 import ReactDOM from 'react-dom';
 // Acá importaremos el componente que hemos creado siguiendo la ruta donde la tenemos guardada
-import Playlist from './src/playlist/component/playlist';
-import data from './src/api.json';
+//import Playlist from './src/playlist/component/playlist';
+import Home from '../pages/containers/container';
+//import data from './src/api.json';
 
 // Acá es donde guardaremos en una variable nuestro id de html (eta es la parte de DOM que ya existe)
 const container = document.getElementById('app');
@@ -22,6 +23,6 @@ ReactDOM.render(
   //type="video"
   ///>, 
   //container
-  <Playlist data={data} />,
+  <Home />,
   container  
 );

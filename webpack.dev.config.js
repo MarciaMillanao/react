@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    myapp: path.resolve(__dirname, 'index.js'), // esta es la ruta de archivo que va a compilar
+    home: path.resolve(__dirname, 'src/homepages/home.js'), // esta es la ruta de archivo que va a compilar
   },
   output: {
     path: path.resolve(__dirname, 'dist'),// esta es la salida que tendrá que estará en la carpeta dist

@@ -17,7 +17,7 @@ module.exports = (env) => {
   return {
 
     entry: {
-      myapp: path.resolve(__dirname, 'index.js'), // esta es la ruta de archivo que va a compilar
+      home: path.resolve(__dirname, 'src/homepages/home.js'), // esta es la ruta de archivo que va a compilar
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
