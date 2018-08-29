@@ -1,0 +1,10 @@
+body {
+  margin:0;
+  background-color: slategrey;
+}
+
+.Homelayout {
+  display: flex;
+  margin: 0 auto;
+  min-height: 100vh;
+}

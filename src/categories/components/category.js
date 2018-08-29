@@ -4,8 +4,8 @@ import Playlist from '../../playlist/component/playlist';
 function Category(props) {
   return (
     <div>
-      <p> {props.description} </p>
       <h2> {props.title} </h2>
+      <p> {props.description} </p>
       <Playlist 
         playlist={props.playlist}/>
     </div>
