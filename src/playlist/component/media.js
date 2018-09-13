@@ -8,7 +8,7 @@ import './media.css';
 class Media extends Component {
   // Para que nuestro codigo funcione, debemos enlazar nuestro evento a nuestra class Media, eso se hace a traves de un método llamado constructor, que se autoejecuta una vez que sea instanciada (se autollama, cuando Media se renderiza), recibe como parámetro nuestras propiedades, y tambien utilizamos super, para utilizar nuestras propiedades
   // En react las props son inmutables, si queremos hacer su contenido dinamico, tenemos que cambiar el estado
-  constructor(props) {
+  /*constructor(props) {
     super(props)
     this.state = {
       author: props.author
@@ -31,7 +31,7 @@ class Media extends Component {
       author: 'Karina Yañez',
     })
 
-  }
+  }*/
   // este componente se instanciará con un método llamado render, que tendrá dentro todo el código html
   render() {
     // En react podemos utilizar estilos inline, los tenemos que guardar en una variable y luego utilizarla en el elemento que querramos 
@@ -54,7 +54,7 @@ class Media extends Component {
       // this es porque llamaremos a algo que esta dentro de nuestra class Media, handleClick simplemente ese es el nombre de nuestra función (manejador de nuestro click de elementos)
       // Si voy a realizar cambio de estado, ya no será this.props.author, sino que acá utilizaremos this.state.author
       // en src llamo a cover que es el nombre de la clave en el json
-      <div className="Media" onClick={this.handleClick}>
+      <div className="Media" onClick={this.props.handleClick}>
         <div>
           <h3>{this.props.title}</h3>
           <img 
@@ -64,7 +64,7 @@ class Media extends Component {
             height={160}
             className="Media-image"
             />
-          <p>{this.state.author}</p>
+          
         </div>
       </div>
     )
